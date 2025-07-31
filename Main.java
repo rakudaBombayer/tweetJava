@@ -55,6 +55,7 @@ private static final long serialVersionUID = 1L;
 		
 	}
 	
+	
 	//post
 	@Override
 	protected void doPost(HttpServletRequest request,
@@ -83,6 +84,11 @@ private static final long serialVersionUID = 1L;
 	 	    
 	 	    //アプリケーションスコープにつぶやきリストを保存
 	 	    application.setAttribute("mutterList", mutterList);
+	    } else {
+	    	
+	    	//エラーメッセージをリクエストスコープに保存
+	    	request.setAttribute("errorMsg", 
+	    			"つぶやきが入力されていません");    	
 	    }
 	    
 	    // メイン画面にフォワード
